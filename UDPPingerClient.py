@@ -26,6 +26,7 @@ lost_packets = 0
 for sequence_number in range(1, total_pings + 1):
     #create ping message with sequence number and current time
     message = f'Ping {sequence_number} {time.time()}'
+    print(f"Sending message: {message}")
     try:
         #send ping message to server
         clientSocket.sendto(message.encode(), (serverName, serverPort))
